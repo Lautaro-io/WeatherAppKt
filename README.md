@@ -46,7 +46,7 @@ Búsqueda de Ciudades
 
 # Clonar el repositorio
 
--git clone https://github.com/tu_usuario/WeatherApp.git
+-git clone https://github.com/Lautaro-io/WeatherApp.git
 -cd WeatherApp
 -Configuración del API Key
 
