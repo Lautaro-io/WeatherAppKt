@@ -1,4 +1,4 @@
-# 🌦️ WeatherApp 📱
+# 🌦️ Weatherly  📱
 WeatherApp es una aplicación de clima básica que permite a los usuarios buscar información meteorológica actual en cualquier ciudad del mundo. La aplicación utiliza una interfaz interactiva con un SearchView y un menú desplegable Spinner para mostrar las opciones de ciudades, permitiendo al usuario seleccionar una ubicación específica y obtener los datos del clima correspondientes.
 
 ## 📸 Capturas de Pantalla
