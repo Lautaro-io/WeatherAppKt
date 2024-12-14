@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeatherMainActivity"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:layout_marginTop="-40dp"
+    android:gravity="center"
+    >
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/svg_img">
+
+    </ImageView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textAllCaps="true"
+        android:text="@string/title1"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:fontFamily="sans-serif"
+        android:textSize="50sp"
+        android:text="@string/title2"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:gravity="center"
+        />
+    <SearchView
+        android:id="@+id/svWeather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:queryHint="Ingrese el nombre de la ciudad"
+        android:iconifiedByDefault="false"
+        android:background="@drawable/background_searchview"
+        android:layout_marginTop="26dp"
+        android:layout_marginHorizontal="20dp">
+
+    </SearchView>
+
+    <Spinner
+        android:id="@+id/spinnerCities"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="20dp"
+        android:spinnerMode="dropdown"
+        android:dropDownVerticalOffset="10dp"/>
+</LinearLayout>
