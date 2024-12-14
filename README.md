@@ -5,9 +5,9 @@ WeatherApp es una aplicación de clima básica que permite a los usuarios buscar
 ### Pantalla principal
 ![Captura de pantalla 2024-12-13 215346](https://github.com/user-attachments/assets/b78ea2e3-bbe1-4fa0-bcfb-652c116fd735)
 ### Resultados de la busqueda
-![Captura de pantalla 2024-12-14 103005](https://github.com/user-attachments/assets/6262cc27-6acf-4a3e-8fc7-aa58cededa23)
+![Captura de pantalla 2024-12-14 114106](https://github.com/user-attachments/assets/b6fd0fc6-8f10-4d06-b80b-318404994b2f)
 ### Clima actual del resultado elegido
-![Captura de pantalla 2024-12-14 103021](https://github.com/user-attachments/assets/7c7bfa12-565d-466f-82b3-0a1fb13d5089)
+![Captura de pantalla 2024-12-14 114115](https://github.com/user-attachments/assets/3d85a56f-6ae8-4112-ad85-392b0360af08)
 
 # 🚀 Funcionalidades
 Búsqueda de Ciudades
@@ -16,12 +16,14 @@ Búsqueda de Ciudades
 -La app sugiere ciudades relevantes en un menú desplegable (Spinner).
 -Selección de Resultados
 
--Si hay múltiples coincidencias, se despliega una lista de ciudades en el menú.
+-Si hay múltiples coincidencias, se despliega un dialog con multiples resultados.
 -Al seleccionar una ciudad, se envía su latitud y longitud a la siguiente pantalla.
 -Visualización de Clima
 
 -Una vez seleccionada la ciudad, la app muestra el clima actual con detalles como:
 -Temperatura en °C.
+-Viento en Km/h.
+-Humedad en % (porcentaje).
 -Descripción de la condición climática (p. ej., "Parcialmente nublado").
 -Icono representativo del estado del clima.
 #🛠️ Tecnologías Utilizadas
@@ -30,7 +32,7 @@ Búsqueda de Ciudades
 -WeatherAPI: API utilizada para obtener los datos del clima.
 -ViewBinding: Manejo eficiente de las vistas.
 -Coroutines: Para realizar operaciones asíncronas.
--SearchView y Spinner: Componentes UI para búsqueda y selección.
+-SearchView y Dialog: Componentes UI para búsqueda y selección.
 # 🌐 APIs Utilizadas
 -Geocoding API (para buscar ciudades):
 
