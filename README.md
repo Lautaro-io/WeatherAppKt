@@ -13,7 +13,7 @@ WeatherApp es una aplicación de clima básica que permite a los usuarios buscar
 Búsqueda de Ciudades
 
 -Los usuarios pueden ingresar el nombre de una ciudad en un SearchView.
--La app sugiere ciudades relevantes en un menú desplegable (Spinner).
+-La app sugiere ciudades relevantes en un menú desplegable (Dialog).
 -Selección de Resultados
 
 -Si hay múltiples coincidencias, se despliega un dialog con multiples resultados.
