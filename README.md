@@ -34,11 +34,11 @@ Búsqueda de Ciudades
 -Coroutines: Para realizar operaciones asíncronas.
 -SearchView y Dialog: Componentes UI para búsqueda y selección.
 # 🌐 APIs Utilizadas
--Geocoding API (para buscar ciudades):
 
--Endpoint: https://api.locationiq.com/v1/autocomplete.php
+-Open Cage API (para buscar ciudades):
+-Endpoint: [(https://api.opencagedata.com/geocode/v1/)]
+
 -WeatherAPI (para obtener datos del clima):
-
 -Endpoint: https://api.weatherapi.com/v1/current.json
 -Parámetros:
 -key: Clave de API.
