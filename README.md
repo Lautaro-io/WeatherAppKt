@@ -3,7 +3,7 @@ WeatherApp es una aplicación de clima básica que permite a los usuarios buscar
 
 ## 📸 Capturas de Pantalla
 ### Pantalla principal
-![Captura de pantalla 2024-12-13 215346](https://github.com/user-attachments/assets/b78ea2e3-bbe1-4fa0-bcfb-652c116fd735)
+![Captura de pantalla 2024-12-14 114430](https://github.com/user-attachments/assets/6c994527-adee-42c1-88be-88173401d2d2)
 ### Resultados de la busqueda
 ![Captura de pantalla 2024-12-14 114106](https://github.com/user-attachments/assets/b6fd0fc6-8f10-4d06-b80b-318404994b2f)
 ### Clima actual del resultado elegido
