@@ -8,11 +8,13 @@ import android.view.View
 import android.view.ViewParent
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.ListView
 import android.widget.SearchView
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.ui.text.toLowerCase
+import androidx.compose.ui.window.Dialog
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.weatherappkt.data.ApiGetLocation
@@ -56,37 +58,60 @@ class WeatherMainActivity : AppCompatActivity() {
     }
     private var isSpinnerInitial = true
 
-    private fun setupSpinner(spinner: Spinner, cityList: List<GeometryResponse>) {
-        spinner.setSelection(-1,false)
+//    private fun setupSpinner(spinner: Spinner, cityList: List<GeometryResponse>) {
+//        spinner.setSelection(-1,false)
+//        val cityNames = cityList.map { it.name }
+//        val adapter = ArrayAdapter(spinner.context, R.layout.simple_spinner_item, cityNames).apply {
+//            setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
+//        }
+//
+//        spinner.adapter = adapter
+//
+//        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+//
+//            override fun onItemSelected(p0: AdapterView<*>?, view: View?, position: Int, id: Long) {
+//
+//                if (isSpinnerInitial) {
+//                    isSpinnerInitial = false
+//                    return
+//                }
+//                val selectedCity = cityList[position]
+//                val intent = Intent(this@WeatherMainActivity, WeatherActivityData::class.java)
+//
+//                intent.putExtra("LONGITUD", selectedCity.geometry.longitud)
+//                intent.putExtra("LATITUD", selectedCity.geometry.latitud)
+//                startActivity(intent)
+//                return
+//            }
+//
+//            override fun onNothingSelected(p0: AdapterView<*>?) {
+//                Log.i("Chelo", "Nothing")
+//            }
+//        }
+//    }
+
+
+
+    private fun showDialog(cityList: List<GeometryResponse>) {
+        val dialog = android.app.Dialog(this)
+        dialog.setContentView(com.example.weatherappkt.R.layout.dialog_city)
         val cityNames = cityList.map { it.name }
-        val adapter = ArrayAdapter(spinner.context, R.layout.simple_spinner_item, cityNames).apply {
-            setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
+        val listView = dialog.findViewById<ListView>(com.example.weatherappkt.R.id.listViewCities)
+        val adapter = ArrayAdapter(this, R.layout.simple_list_item_1, cityNames)
+        listView.adapter = adapter
+        listView.setOnItemClickListener { _, _, position, _ ->
+            val selectedCity = cityList[position]
+            val intent = Intent(this@WeatherMainActivity, WeatherActivityData::class.java)
+
+            intent.putExtra("LONGITUD", selectedCity.geometry.longitud)
+            intent.putExtra("LATITUD", selectedCity.geometry.latitud)
+            startActivity(intent)
+            dialog.dismiss()
+
         }
-
-        spinner.adapter = adapter
-
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-            override fun onItemSelected(p0: AdapterView<*>?, view: View?, position: Int, id: Long) {
-
-                if (isSpinnerInitial) {
-                    isSpinnerInitial = false
-                    return
-                }
-                val selectedCity = cityList[position]
-                val intent = Intent(this@WeatherMainActivity, WeatherActivityData::class.java)
-
-                intent.putExtra("LONGITUD", selectedCity.geometry.longitud)
-                intent.putExtra("LATITUD", selectedCity.geometry.latitud)
-                startActivity(intent)
-                return
-            }
-
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-                Log.i("Chelo", "Nothing")
-            }
-        }
+        dialog.show()
     }
+
 
     private fun locationCity(name: String) {
         CoroutineScope(Dispatchers.IO).launch {
@@ -94,9 +119,7 @@ class WeatherMainActivity : AppCompatActivity() {
                 val response =
                     retrofitLocation.create(ApiGetLocation::class.java).getCityLocation(name)
                 runOnUiThread {
-                    setupSpinner(
-                        binding.spinnerCities, response.data
-                    )
+                    showDialog(response.data)
                 }
 
 

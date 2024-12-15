@@ -52,11 +52,11 @@
 
     </SearchView>
 
-    <Spinner
-        android:id="@+id/spinnerCities"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginHorizontal="20dp"
-        android:spinnerMode="dropdown"
-        android:dropDownVerticalOffset="10dp"/>
+<!--    <Spinner-->
+<!--        android:id="@+id/spinnerCities"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:spinnerMode="dropdown"-->
+<!--        android:dropDownVerticalOffset="10dp"/>-->
 </LinearLayout>

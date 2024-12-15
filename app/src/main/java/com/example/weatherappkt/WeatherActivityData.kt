@@ -56,8 +56,12 @@ class WeatherActivityData : AppCompatActivity() {
                     else -> "Condición desconocida"
                 }
                     binding.condition.text = conditionInSpanish
-                    val temp = "${response.current.temp}°C"
+                    val temp = "Temp :${response.current.temp}°C"
                     binding.temp.text = temp
+                    val km = "Wind: ${response.current.wind}km/h"
+                    binding.wind.text = km
+                    val humidity = "Humidity: ${response.current.humidity}%"
+                    binding.humidity.text = humidity
                 }
 
             } catch (e: Exception) {

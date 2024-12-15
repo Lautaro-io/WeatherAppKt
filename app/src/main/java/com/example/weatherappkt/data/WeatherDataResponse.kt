@@ -14,7 +14,10 @@ data class LocationData(
 )
 data class CurrentWeather(
     @SerializedName("temp_c") val temp:Float,
-    @SerializedName("condition") val condition:ConditionWeather
+    @SerializedName("condition") val condition:ConditionWeather,
+    @SerializedName("wind_kph") val wind:Float,
+    @SerializedName("humidity") val humidity:Int
+
 )
 data class ConditionWeather(
     @SerializedName("text") val condition: String,
